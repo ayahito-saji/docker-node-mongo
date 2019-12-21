@@ -11,6 +11,8 @@ services:
     volumes:
       - ./src/backend:/backend
     command: sh -c "npm install && DEBUG=backend:* npm start"
+    depends_on:
+      - database
 
   database:
     image: mongo
