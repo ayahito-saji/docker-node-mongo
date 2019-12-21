@@ -1,0 +1,13 @@
+version: '3'
+services:
+  backend:
+    image: node:10.16-alpine
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    user: "1000:1000"
+    working_dir: /backend
+    volumes:
+      - ./src/backend:/backend
+    command: sh -c "npm install && DEBUG=backend:* npm start"
