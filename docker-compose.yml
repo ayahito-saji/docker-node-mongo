@@ -10,7 +10,8 @@ services:
     working_dir: /backend
     volumes:
       - ./src/backend:/backend
-    command: sh -c "npm install && DEBUG=backend:* npm start"
+    #command: sh -c "npm install && DEBUG=backend:* npm start"
+    tty: true
     depends_on:
       - database
 
